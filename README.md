@@ -1,1 +1,1 @@
-# go-ninja
+# Go language by NetNinja
