@@ -34,7 +34,8 @@ Function *main* is the entry point of the compiled program.
 
 ### Imports
 
-For importing files use *import* keyword.
+For importing files use *import* keyword. 
+Multiple imports will be put between brackets.
 Unused imports will cause errors.
 
 ### Go standard library
@@ -182,4 +183,38 @@ fmt.Println(scores, len(scores))
 rangeOne := names[1:4] // doesn't include pos 4 element
 rangeTwo := names[2:]  //includes the last element
 rangeThree := names[:3]
+```
+
+## The Standard Library
+
+[docs](https://pkg.go.dev/std)
+
+### strings 
+
+[docs](https://pkg.go.dev/strings)
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	greeting := "Ciao a tutti!"
+
+	fmt.Println(strings.Contains(greeting, "Ciao"))
+    fmt.Println(strings.ReplaceAll("Ciao", "Buongiorno))
+}
+```
+
+### sort 
+
+Sort methods alter original slice
+
+[docs](https://pkg.go.dev/sort)
+
+```go
+
 ```
