@@ -122,7 +122,6 @@ Package [*fmt*](https://pkg.go.dev/fmt) implements formatted I/O with functions.
     - %0.nf: prints n decimals
 - *Sprintf*: saves printf output to a variable
 
-
 ```go
 // Print
 	fmt.Print("hello, ")
@@ -146,4 +145,41 @@ Package [*fmt*](https://pkg.go.dev/fmt) implements formatted I/O with functions.
 	fmt.Println("the saved string is:", str)
 ```
 
-### Printls
+## Arrays & Slices
+
+### Arrays
+
+Arrays are fixed length: array size must be specified in declaration. 
+If *no size* has been specified in declaration, a *slice* will be created instead of an array.xs
+*len* built-in method returns the length of the array.
+
+```go
+// var ages [3]int = [3]int{20, 25, 30}
+var ages = [3]int{20, 25, 30}
+
+names := [4]string{"yoshi", "mario", "peach", "bowser"}
+names[1] = "luigi"
+
+fmt.Println(ages, len(ages))
+fmt.Println(names, len(names))
+```
+
+### Slices
+
+Slices can change their length and they do not need size in declaration.
+*append* method appends a new element to slice and returns a new slice.
+Slice range *[from:to_excluded]* selects elements from specified element to the first excluded.
+Ranges can be appended.
+
+```go
+var scores = []int{100, 50, 60}
+scores[2] = 25
+scores = append(scores, 85)
+
+fmt.Println(scores, len(scores))
+
+// slice ranges
+rangeOne := names[1:4] // doesn't include pos 4 element
+rangeTwo := names[2:]  //includes the last element
+rangeThree := names[:3]
+```
