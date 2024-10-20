@@ -589,5 +589,17 @@ func (b bill) format() string {
 
 ## Receiver functions with pointers
 
+```go
+// update tip
+func (b *bill) updateTip(tip float64) {
+	b.tip = tip
+}
+
+// add item
+func (b *bill) addItem(name string, price float64) {
+	b.items[name] = price
+}
+```
+
 
 
