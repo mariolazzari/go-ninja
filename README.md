@@ -448,3 +448,51 @@ func main() {
 
 }
 ```
+
+## Pass by value
+
+Go makes a copy of values passed to a function from Group A types.
+Group B types are passed by reference.
+
+### Group types
+
+| Group A  | Group B   |
+| -------- | --------- |
+| Strings  | Slices    |
+| Ints     | Maps      |
+| Floats   | Functions |
+| Booleans |           |
+| Arrays   |           |
+| Structs  |           |
+
+```go
+package main
+
+import "fmt"
+
+func updateName(n string) {
+	n = "Mario"
+}
+
+func updateMenu(m map[string]float64) {
+	m["coffee"] = 1.99
+}
+
+func main() {
+	// group A type
+	n := "mario"
+	updateName(n)
+	fmt.Println(n)
+
+	// group b type
+	menu := map[string]float64{
+		"pie":       3.99,
+		"ice cream": 2.99,
+	}
+	updateMenu(menu)
+	fmt.Println(menu)
+}
+```
+
+## Pointers
+
