@@ -524,3 +524,46 @@ func main() {
 	fmt.Println("name =", n)
 }
 ```
+
+## Structs
+
+Custom object structure
+
+### Desfinition
+
+```go
+package main
+
+type bill struct {
+	name  string
+	items map[string]float64
+	tip   float64
+}
+
+// add new bill
+func newBill(name string) bill {
+	b := bill{
+		name:  name,
+		items: map[string]float64{},
+		tip:   0,
+	}
+
+	return b
+}
+```
+
+### Creation
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	myBill := newBill("Mario's bill")
+	fmt.Println((myBill))
+}
+```
+
+
+
