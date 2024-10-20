@@ -570,26 +570,6 @@ func main() {
 Function associated to a struct.
 
 ```go
-package main
-
-type bill struct {
-	name  string
-	items map[string]float64
-	tip   float64
-}
-
-// add new bill
-func newBill(name string) bill {
-	b := bill{
-		name:  name,
-		items: map[string]float64{},
-		tip:   0,
-	}
-
-	return b
-}
-
-// format bill (rev)
 func (b bill) format() string {
 	fs := "Bill's breakdown\n"
 	var total float64 = 0
@@ -606,4 +586,8 @@ func (b bill) format() string {
 	return fs
 }
 ```
+
+## Receiver functions with pointers
+
+
 
