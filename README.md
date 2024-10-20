@@ -364,3 +364,43 @@ func main() {
 	fmt.Println(fn2, ln2)
 }
 ```
+
+## Package scope
+
+```go
+package main
+
+import "fmt"
+
+var score = 99.5
+
+func main() {
+	sayHello("Mario")
+
+	for _, p := range points {
+		fmt.Println("point", p)
+	}
+
+	showScore()
+}
+```
+
+```go
+package main
+
+import "fmt"
+
+var points = []int{10, 20, 100, 45, 70}
+
+func sayHello(n string) {
+	fmt.Println("Hello", n)
+}
+
+func showScore() {
+	fmt.Println("Score:", score)
+}
+```
+
+```sh
+go run 11_package/main.go 11_package/greetings.go
+```
