@@ -643,5 +643,24 @@ func main() {
 }
 ```
 
+## Switch
+
+```go
+switch opt {
+	case "a":
+		fmt.Println("You chose 'a'")
+
+	case "s":
+		fmt.Println("You chose 's'")
+
+	case "t":
+		fmt.Println("You chose 't'")
+
+	default:
+		fmt.Println("Invalid option...")
+		promptOptions(b)
+	}
+```
+
 
 
